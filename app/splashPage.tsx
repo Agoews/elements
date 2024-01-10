@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 
 const SplashPage = () => {
@@ -43,7 +44,6 @@ const SplashPage = () => {
   return (
     <main className="h-screen w-screen flex items-center justify-center">
       {/* Background with opacity */}
-      <div className="absolute top-0 left-0 h-screen w-screen bg-center bg-cover bg-no-repeat bg-[url('../public/elements_2.png')] opacity-60"></div>
 
       {/* Form */}
       <div className="relative z-10">
