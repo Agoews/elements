@@ -19,6 +19,11 @@ const SplashPage = () => {
     setIsModalOpen(false);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    openModal();
+  };
+
   const elements: { [key: string]: string } = {
     "1": "Water (水)",
     "2": "Fire  (火)",
@@ -47,49 +52,51 @@ const SplashPage = () => {
 
       {/* Form */}
       <div className="relative z-10">
-        <label className="form-control w-full">
-          <label>Please enter numbers below</label>
-          <input
-            type="text"
-            placeholder="Type here"
-            className="input input-bordered w-full"
-            onChange={handleInputChange}
-          />
-        </label>
+        <form onSubmit={handleSubmit}>
+          <label className="form-control w-full">
+            <label>Please enter numbers below</label>
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full"
+              onChange={handleInputChange}
+            />
+          </label>
 
-        <div>
-          <button className="btn mt-2" onClick={openModal}>
-            Submit
-          </button>
+          <button className="btn mt-2">Submit</button>
+        </form>
 
-          {/* Modal */}
-          {isModalOpen && (
-            <dialog id="my_modal_2" className="modal" open>
-              <div className="modal-box">
-                <h3 className="font-bold text-lg">
-                  Elements for your numbers:
-                </h3>
-                <table className="table w-full">
-                  <thead>
-                    <tr>
-                      <th>Number</th>
-                      <th>Element</th>
-                    </tr>
-                  </thead>
-                  <tbody>{createTableRows()}</tbody>
-                </table>
-                <button className="btn" onClick={closeModal}>
-                  Close
-                </button>
-              </div>
-              <form method="dialog" className="modal-backdrop">
-                <button type="button" onClick={closeModal}>
-                  Close
-                </button>
-              </form>
-            </dialog>
-          )}
-        </div>
+        {isModalOpen && (
+          <div>
+            {/* Modal */}
+            {isModalOpen && (
+              <dialog id="my_modal_2" className="modal" open>
+                <div className="modal-box">
+                  <h3 className="font-bold text-lg">
+                    Elements for your numbers:
+                  </h3>
+                  <table className="table w-full">
+                    <thead>
+                      <tr>
+                        <th>Number</th>
+                        <th>Element</th>
+                      </tr>
+                    </thead>
+                    <tbody>{createTableRows()}</tbody>
+                  </table>
+                  <button className="btn" onClick={closeModal}>
+                    Close
+                  </button>
+                </div>
+                <form method="dialog" className="modal-backdrop">
+                  <button type="button" onClick={closeModal}>
+                    Close
+                  </button>
+                </form>
+              </dialog>
+            )}
+          </div>
+        )}
       </div>
     </main>
   );
