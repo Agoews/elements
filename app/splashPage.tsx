@@ -1,4 +1,5 @@
 "use client";
+import Script from "next/script";
 import React, { useState } from "react";
 
 const SplashPage = () => {
@@ -96,6 +97,10 @@ const SplashPage = () => {
           </div>
         )}
       </div>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2269067680592589"
+      />
     </main>
   );
 };

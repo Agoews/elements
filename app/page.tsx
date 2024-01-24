@@ -7,6 +7,11 @@ export default function Home() {
     <div>
       <Navbar />
       <SplashPage />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2269067680592589"
+        crossOrigin="anonymous"
+      ></script>
     </div>
   );
 }
