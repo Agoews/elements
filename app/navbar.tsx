@@ -5,7 +5,7 @@ const navbar = () => {
   return (
     <>
       <div className="absolute top-0 left-0 h-screen w-screen bg-center bg-cover bg-no-repeat bg-[url('../public/elements_2.png')] opacity-60"></div>
-      <div className="navbar bg-base-100 z-10 absolute top-0 left-0 opacity-50">
+      {/* <div className="navbar bg-base-100 z-10 absolute top-0 left-0 opacity-50">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -64,7 +64,7 @@ const navbar = () => {
         <div className="navbar-center">
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

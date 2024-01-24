@@ -25,16 +25,16 @@ const SplashPage = () => {
   };
 
   const elements: { [key: string]: string } = {
-    "1": "Water (水)",
-    "2": "Fire  (火)",
-    "3": "Wood  (木)",
-    "4": "Metal (金)",
-    "5": "Earth (土)",
-    "6": "Water (水)",
-    "7": "Fire  (火)",
-    "8": "Wood  (木)",
-    "9": "Metal (金)",
-    "0": "Earth (土)",
+    "1": "水",
+    "2": "火",
+    "3": "木",
+    "4": "金",
+    "5": "土",
+    "6": "水",
+    "7": "火",
+    "8": "木",
+    "9": "金",
+    "0": "土",
   };
 
   const createTableRows = () => {
@@ -54,16 +54,16 @@ const SplashPage = () => {
       <div className="relative z-10">
         <form onSubmit={handleSubmit}>
           <label className="form-control w-full">
-            <label>Please enter numbers below</label>
+            <label>请输入数字</label>
             <input
               type="text"
-              placeholder="Type here"
+              placeholder="输入"
               className="input input-bordered w-full"
               onChange={handleInputChange}
             />
           </label>
 
-          <button className="btn mt-2">Submit</button>
+          <button className="btn mt-2">提交</button>
         </form>
 
         {isModalOpen && (
@@ -72,25 +72,23 @@ const SplashPage = () => {
             {isModalOpen && (
               <dialog id="my_modal_2" className="modal" open>
                 <div className="modal-box">
-                  <h3 className="font-bold text-lg">
-                    Elements for your numbers:
-                  </h3>
+                  <h3 className="font-bold text-lg">数字五行 </h3>
                   <table className="table w-full">
                     <thead>
                       <tr>
-                        <th>Number</th>
-                        <th>Element</th>
+                        <th>数字</th>
+                        <th>五行</th>
                       </tr>
                     </thead>
                     <tbody>{createTableRows()}</tbody>
                   </table>
                   <button className="btn" onClick={closeModal}>
-                    Close
+                    关闭
                   </button>
                 </div>
                 <form method="dialog" className="modal-backdrop">
                   <button type="button" onClick={closeModal}>
-                    Close
+                    关闭
                   </button>
                 </form>
               </dialog>
